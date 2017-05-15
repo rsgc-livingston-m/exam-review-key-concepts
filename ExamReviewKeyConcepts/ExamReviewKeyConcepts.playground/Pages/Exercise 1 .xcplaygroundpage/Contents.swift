@@ -22,8 +22,17 @@ import PlaygroundSupport
 //: ## Your code starts here
 // Create a new canvas
 let canvas = Canvas(width: 400, height: 600)
-
-
+//Set colour to the beautiful turquoise in the example
+canvas.fillColor = Color(hue: 190, saturation: 80, brightness: 90, alpha: 100)
+//make background of image blue by making a big rectangle behind it
+canvas.drawRectangle(centreX: 250, centreY: 350, width: 500, height: 610)
+for y in stride(from: 345, through: 0, by: -5) {
+    canvas.textColor = Color.init(hue: 0, saturation: 0, brightness: 0, alpha: 10)
+    canvas.drawText(message: "blur", size: 190, x: 20, y: y)
+}
+canvas.textColor = Color.black
+canvas.drawText(message: "blur", size: 190, x: 20, y: 330)
+    
 //: ## Template code
 //: The code below is necessary to see the result of your work in the Assistant Editor at right. Please do not remove.
 PlaygroundPage.current.liveView = canvas.imageView
